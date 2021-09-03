@@ -13,24 +13,16 @@ import retrofit2.http.Path;
 
 public interface PrayerAPI {
 
-    // Get , Post , Update , Delete
-
-    //URL BASE -> https://ezanvakti.herokuapp.com/
-
     @GET("ulkeler")
     Observable<List<Country>> getCountry();
-    //Call<List<Country>> getCountry();
 
     @GET("sehirler/{countryId}")
     Observable<List<City>> getCity(@Path("countryId") int countryId);
-    //Call<List<City>> getCity(@Path("countryId") int countryId);
 
     @GET("ilceler/{cityId}")
     Observable<List<Province>> getProvince(@Path("cityId") int cityId);
-    //Call<List<Province>> getProvince(@Path("cityId") int cityId);
 
     @GET("vakitler/{provinceId}")
     Observable<List<Prayer>> getPrayer(@Path("provinceId") int provinceId);
-    //Call<List<Prayer>> getPrayer(@Path("provinceId") int provinceId);
 
 }
